@@ -1,37 +1,74 @@
-import React from "react";
+import { useAppSelector, useAppDispatch } from "../hooks";
+import { chooseAbout, chooseSandBox } from "../reducers/viewReducer";
+import {About} from './About'
 
-export function Navbar (){
+export function NavBar() {
+
+    const state = useAppSelector((state) => state.viewChoice);
+    const dispatch = useAppDispatch();
+
+    function scrollIntoView(id:string){
+        const container = document.getElementById("content")
+        const element = document.getElementById(id)
+        container?.scroll({
+            top: element?.offsetTop,
+            behavior: 'smooth'
+          });
+    }
     return (
-        <div>
-            <div className="navbar bg-primary text-white">
-                <div className="navbar-start">
-                    <div className="dropdown">
-                    <label tabIndex={0} className="btn btn-ghost btn-circle">
-                        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h7" /></svg>
-                    </label>
-                    <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-primary rounded-box w-52">
-                        <li><label htmlFor="my-modal-4" className="btn btn-primary">Splache</label></li>
-                        <li><a>Portfolio</a></li>
-                        <li><a>About</a></li>
-                    </ul>
-                    </div>
-                    <div className="nhcathcart-title">
-                        <a className="btn btn-ghost normal-case text-xl">nhcathcart</a>
-                    </div>
-                </div>
-            </div>
-            
-            
-
-            {/* Put this part before </body> tag */}
-            <input type="checkbox" id="my-modal-4" className="modal-toggle" />
-            <label htmlFor="my-modal-4" className="modal cursor-pointer">
-            <label className="modal-box h-[80vh] w-[80vw]" htmlFor="">
-                <iframe className="w-full h-full"
-                    src="http://www.splachejs.com">
-                </iframe>
-            </label>
-            </label>
+      <div className="relative min-h-screen h-[100vh] w-[100vw] md:flex">
+        {/* navbar */}
+        <div className="bg-emerald-700 text-stone-200 font-bold flex justify-between items-center md:hidden">
+          <a href="" className="block p-4">
+            sockdrawer
+          </a>
+          <button
+            className="p-4"
+            onClick={() => {
+              const sidebar = document.querySelector(".side-bar-menu");
+              sidebar?.classList.toggle("-translate-x-full");
+            }}
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth={1.5}
+              stroke="currentColor"
+              className="w-6 h-6"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+              />
+            </svg>
+          </button>
         </div>
-    )
-}
+        <div className="side-bar-menu bg-emerald-700 text-stone-200 w-64 p-4 absolute inset-y-0 left-0 transform -translate-x-full md:relative md:translate-x-0 transition duration-200 ease-in-out">
+          <h1 className="text-3xl py-2 px-4 text-white">nhcathcart</h1>
+          <nav>
+            <button
+              className="block py-2 px-4 transition duration-100 hover:bg-blue-500 hover:text-white rounded"
+              onClick={() => scrollIntoView('About')}
+            >
+              About
+            </button>
+            <button
+              className="block py-2 px-4 transition duration-100 hover:bg-blue-500 hover:text-white rounded"
+              onClick={() => scrollIntoView('Sandbox')}
+            >
+              Sandbox
+            </button>
+          </nav>
+        </div>
+        {/* content */}
+        <div className="p-20 flex bg-slate-50 flex-col overflow-scroll w-full h-full" id="content">
+            <About/>
+            <h1 id="Sandbox">SandBox</h1>
+        </div>
+        
+      </div>
+    );
+  }
+  
