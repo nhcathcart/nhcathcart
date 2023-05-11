@@ -36,7 +36,7 @@ nav{
     border-radius: 8px;
 }
 .nav-button:hover{
-    background-color: #7695B7;
+    background-color: #59536F;
 }
 .nav-button:active{
     transform: scale(.95);

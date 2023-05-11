@@ -1,0 +1,36 @@
+.carousel{
+    overflow: hidden;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.carousel-inner{
+    white-space: nowrap;
+    transition: transform 0.3s;
+}
+.carousel-item{
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.carousel-image{
+    width: 90%;
+}
+.carousel-item-text{
+
+}
+.carousel-buttons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.carousel-button{
+    border-radius: 3px;
+}
+.carousel-button:hover{
+    background-color: #4d485f;
+}
+.carousel-button:active{
+    transform: scale(.90);
+}

@@ -1,14 +1,15 @@
 .project-container{
     display: flex;
-    height: 300px;
+    flex-shrink: 0;
+    height: 500px;
     width: 100%;
+    margin-top: 100px;
 }
 .project-text-container{
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
-    padding: 4%;
     width: 50%;
     height: 100%;
 }
@@ -19,14 +20,46 @@
     font-size: 24px;
     font-weight: bold;
 }
-.project-preview-container{
+.project-preview-container-right{
     display: flex;
     justify-content: flex-end;
     width: 50%;
     height: 100%;
 }
+.project-preview-container-left{
+    display: flex;
+    justify-content: flex-start;
+    width: 50%;
+    height: 100%;
+}
 .project-preview{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
     height: 100%;
     width: 80%;
     border-radius: 10px;
+}
+.thumbnail{
+    width: 90%;
+    border-radius: 5px;
+}
+.preview-buttons{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.preview-button{
+    border-radius: 5px;
+    background-color: #59536F;
+    padding: 5%;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.4);
+}
+.preview-button:hover{
+    background-color: #605a78;
+}
+.preview-button:active{
+    transform: scale(.95);
 }
