@@ -1,0 +1,22 @@
+.modal-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #7695B740;
+  backdrop-filter: blur(4px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.modal-content{
+  display: flex;
+  flex-direction: column;
+  height: 90%;
+  width: 90%; 
+  border-radius: 10px; /* rounded corners (rounded) */
+  padding: 4px; 
+}

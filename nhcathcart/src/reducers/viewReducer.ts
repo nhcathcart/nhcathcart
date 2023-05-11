@@ -3,11 +3,13 @@ import { createSlice } from '@reduxjs/toolkit'
 interface viewChoice {
   about: boolean;
   sandbox: boolean;
+  projects: boolean;
 }
 
 const initialState: viewChoice = {
   about: false,
   sandbox: false,
+  projects: false,
 }
 
 export const viewChoice = createSlice({
@@ -24,11 +26,16 @@ export const viewChoice = createSlice({
         newState.sandbox = true;
         return newState;
     },
+    chooseProjects: (state) => {
+      const newState = Object.assign({}, initialState);
+      newState.projects = true;
+      return newState;
+  },
   },
 })
 
 
 
-export const { chooseAbout, chooseSandBox } = viewChoice.actions
+export const { chooseAbout, chooseSandBox, chooseProjects } = viewChoice.actions
 
 export default viewChoice.reducer

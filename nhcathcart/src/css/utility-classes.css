@@ -1,0 +1,24 @@
+.primary{
+    background-color: #253247;
+}
+.secondary{
+    background-color: #7695B7;
+}
+.tertiary{
+    background-color: #A1B7DF;
+}
+.accent{
+    background-color: #59536F;
+}
+.text{
+    color: #F6F3F2;
+}
+.box-shadow{
+    box-shadow: 0px 0px 20px rgba(224, 221, 221, 0.4);
+}
+.flex-end{
+    align-items: flex-end;
+}
+.flex-start{
+    align-items: flex-start;
+}

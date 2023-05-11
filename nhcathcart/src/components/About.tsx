@@ -1,14 +1,15 @@
 import "../css/About.css";
+import "../css/utility-classes.css"
 export function About() {
   return (
-    <div className="w-full h-full flex flex-col gap-5" id="About">
-      <h4 className="text-emerald-400 text-2xl animate-about-1">
+    <div id="About">
+      <h4 className="animate-about-1 text">
         Hi my name is
       </h4>
-      <h1 className="text-emerald-800 text-6xl animate-about-2">
+      <h1 className="animate-about-2 text">
         Nicholas Cathcart.
       </h1>
-      <h5 className="text-emerald-600 text-xl animate-about-3">
+      <h5 className="animate-about-3 text">
         I build stuff for the internet.
       </h5>
 
