@@ -1,17 +1,30 @@
+.about-container{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	width: 50%;
+	height: 100%;
+	padding: 5%;
+}
 .animate-about-1{
 	font-size: 25px;
 	opacity: 1;
-	animation: slide-in .4s ease-in forwards;
+	animation: slide-in .2s ease-in forwards;
 }
 .animate-about-2{
 	font-size: 50px;
 	opacity: 1;
-	animation: slide-in .8s ease-in forwards;
+	animation: slide-in .4s ease-in forwards;
 }
 .animate-about-3{
 	font-size: 30px;
 	opacity: 1;
-	animation: slide-in 1s ease-in forwards;
+	animation: slide-in 1.4s ease-in forwards;
+}
+.about-p{
+	margin-top: 10%;
+	font-size: 18px;
+	animation: slide-in 1.4s ease-in forwards;
 }
 
 @keyframes slide-in {

@@ -15,7 +15,7 @@ export function ProjectPreview(props: { isOdd: boolean; thumbnail: string; link:
             : "project-preview-container-left"
         }
       >
-        <div className="project-preview secondary box-shadow">
+        <div className="project-preview accent-test">
           <img className="thumbnail" src={thumbnail} />
           <div className="preview-buttons">
             <button className="preview-button" onClick={() => setShowModal(true)}>Preview</button>

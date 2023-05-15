@@ -1,5 +1,5 @@
 import { useAppSelector, useAppDispatch } from "../hooks";
-import { chooseAbout, chooseSandBox, chooseProjects } from "../reducers/viewReducer";
+import { chooseAbout, chooseSnippets, chooseProjects } from "../reducers/viewReducer";
 import "../css/Navbar.css";
 import "../css/utility-classes.css";
 
@@ -16,7 +16,7 @@ export function NavBar() {
       <div className="nav-button-container">
         <button className="nav-button" onClick={()=>{dispatch(chooseAbout())}}>about</button>
         <button className="nav-button" onClick={()=>{dispatch(chooseProjects())}}>projects</button>
-        <button className="nav-button">snippets</button>
+        <button className="nav-button" onClick={()=>{dispatch(chooseSnippets())}}>snippets</button>
         <button className="nav-button">other stuff</button>
       </div>
     </nav>

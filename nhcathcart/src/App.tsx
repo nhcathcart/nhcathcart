@@ -2,6 +2,7 @@ import { useAppSelector, useAppDispatch } from "./hooks";
 import { NavBar } from "./components/Navbar";
 import { About } from "./components/About";
 import { ProjectList } from "./components/ProjectList"
+import { Snippets } from "./components/Snippets"
 import "./css/App.css";
 import "./css/utility-classes.css"
 function App() {
@@ -16,6 +17,7 @@ function App() {
         <div className="content">
           {state.about? <About/> : null}
           {state.projects? <ProjectList/>: null}
+          {state.snippets? <Snippets/>: null}
         </div>
       </div>
     </div>
