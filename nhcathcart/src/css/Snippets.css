@@ -1,17 +1,36 @@
+.snippets-title{
+    font-size: 20px;
+    font-weight: 400;
+}
+.snippet-title{
+    font-size: 30px;
+    font-weight: bold;
+    color: white;
+    padding: 1%;
+}
 .snippet-container{
     width: 100%;
+    border: solid #39537b;
+    border-radius: 10px;
+    margin-top: 2%;
+    padding: 2%;
 }
 .snippet-description{
     width: 100%;
+    margin-top: 2%;
 }
 .snippet-example{
     width: 100%;
+    margin-top: 2%;
 }
 .snippet-codeblock{
     width:100%;
+    margin-top: 2%
 }
-.snippet-buttons-container{
+.snippet-button-container{
     display: flex;
+    width: 100%;
+    margin-top: 2%;
 }
 .snippet-button{
     font-size: 20px;
@@ -19,7 +38,7 @@
     border-radius: 8px;
 }
 .snippet-button:hover{
-    background-color: #59536F;
+    background-color: #39537b;
     color: white;
 }
 .snippet-button:active{

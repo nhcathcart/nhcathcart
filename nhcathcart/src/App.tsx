@@ -5,6 +5,7 @@ import { ProjectList } from "./components/ProjectList"
 import { Snippets } from "./components/Snippets"
 import "./css/App.css";
 import "./css/utility-classes.css"
+import { OtherStuff } from "./components/OtherStuff";
 function App() {
 
   const state = useAppSelector((state) => state.viewChoice);
@@ -18,6 +19,7 @@ function App() {
           {state.about? <About/> : null}
           {state.projects? <ProjectList/>: null}
           {state.snippets? <Snippets/>: null}
+          {state.other? <OtherStuff/>: null}
         </div>
       </div>
     </div>

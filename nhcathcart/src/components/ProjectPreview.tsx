@@ -3,9 +3,9 @@ import { Modal } from "./Modal";
 import { Carousel } from "./Carousel";
 import "../css/utility-classes.css";
 import "../css/Projects.css";
-export function ProjectPreview(props: { isOdd: boolean; thumbnail: string; link: string}) {
+export function ProjectPreview(props: { isOdd: boolean; thumbnail: string; link: string; images: string[]}) {
   const [showModal, setShowModal] = useState(false);
-  const { isOdd, thumbnail, link } = props;
+  const { isOdd, thumbnail, link, images } = props;
   return (
     <Fragment>
       <div
@@ -30,7 +30,7 @@ export function ProjectPreview(props: { isOdd: boolean; thumbnail: string; link:
         }}
       >
         <div className="modal-preview">
-          <Carousel />
+          <Carousel images={images}/>
         </div>
       </Modal>
     </Fragment>

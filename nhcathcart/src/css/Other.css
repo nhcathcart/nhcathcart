@@ -1,0 +1,16 @@
+.other-container{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 5%;
+    margin-top: 3%;
+    border: solid #39537b;
+    border-radius: 10px; 
+}
+.other-container > *{
+    margin-top: 2%;
+  }
+.other-title{
+    font-size: 30px;
+    font-weight: bold;
+}

@@ -1,10 +1,17 @@
-import { useState } from "react";
+import { Component, ReactElement, useState } from "react";
 import { ExNavbar } from "./Examples/ExNavbar";
 import { CodeBlock } from "./CodeBlock";
 import { components } from "../assets/plain-text-components";
 import "../css/utility-classes.css";
 import "../css/Snippets.css";
-export function SnippetItem() {
+export function SnippetItem(props: {
+  title: string;
+  description: string;
+  example: ReactElement;
+  JSX: string;
+  CSS: string;
+}) {
+  const { title, description, example, JSX, CSS } = props;
   const [snippetView, setSnippetView] = useState({
     JSX: true,
     CSS: false,
@@ -24,21 +31,20 @@ export function SnippetItem() {
   let content;
   if (snippetView.JSX)
     content = (
-      <CodeBlock language={"javascript"}>{components.navbar}</CodeBlock>
+      <CodeBlock language={"javascript"}>{JSX}</CodeBlock>
     );
-  else content = <CodeBlock language={"css"}>{components.navbarCSS}</CodeBlock>;
+  else
+    content = <CodeBlock language={"css"}>{CSS}</CodeBlock>;
   return (
     <div className="snippet-container text">
+      <h1 className="snippet-title">{title}</h1>
       <div className="snippet-description">
-        A simple reactive Navbar. This one is used on this website. Scale down
-        your screen to see the mobile version.
+        <p>{description}</p>
       </div>
-      <div className="snippet-example">
-        <ExNavbar />
-      </div>
+      <div className="snippet-example">{example}</div>
       <div className="snippet-button-container">
         <button className="snippet-button" onClick={() => chooseView("JSX")}>
-          JSX
+          TSX
         </button>
         <button className="snippet-button" onClick={() => chooseView("CSS")}>
           CSS

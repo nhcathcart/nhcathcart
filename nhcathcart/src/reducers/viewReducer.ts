@@ -1,41 +1,53 @@
-import { createSlice } from '@reduxjs/toolkit'
+import { createSlice } from "@reduxjs/toolkit";
 
 interface viewChoice {
   about: boolean;
   snippets: boolean;
   projects: boolean;
+  other: boolean;
 }
 
 const initialState: viewChoice = {
+  about: true,
+  snippets: false,
+  projects: false,
+  other: false,
+};
+const resetState: viewChoice = {
   about: false,
   snippets: false,
   projects: false,
-}
+  other: false,
+};
 
 export const viewChoice = createSlice({
-  name: 'viewChoice',
+  name: "viewChoice",
   initialState,
   reducers: {
     chooseAbout: (state) => {
-        const newState = Object.assign({}, initialState);
-        newState.about = true;
-        return newState;
+      const newState = Object.assign({}, resetState);
+      newState.about = true;
+      return newState;
     },
     chooseSnippets: (state) => {
-        const newState = Object.assign({}, initialState);
-        newState.snippets = true;
-        return newState;
+      const newState = Object.assign({}, resetState);
+      newState.snippets = true;
+      return newState;
     },
     chooseProjects: (state) => {
-      const newState = Object.assign({}, initialState);
+      const newState = Object.assign({}, resetState);
       newState.projects = true;
       return newState;
+    },
+    chooseOther: (state) => {
+      const newState = Object.assign({}, resetState);
+      newState.other = true;
+      return newState;
+    },
   },
-  },
-})
+});
 
+export const { chooseAbout, chooseSnippets, chooseProjects, chooseOther } =
+  viewChoice.actions;
 
-
-export const { chooseAbout, chooseSnippets, chooseProjects } = viewChoice.actions
-
-export default viewChoice.reducer
+export default viewChoice.reducer;

@@ -36,9 +36,53 @@ nav{
     border-radius: 8px;
 }
 .nav-button:hover{
-    background-color: #59536F;
+    background-color: #39537b;
     color: white;
 }
 .nav-button:active{
     transform: scale(.95);
+}
+.nav-button-full{
+    font-size: 30px;
+    /* font-weight: bold; */
+    opacity: 1;
+}
+.full-page-menu {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #39537b;
+    z-index: 999;
+    opacity: .9;
+  }
+.hamburger-menu{
+    display: none;
+    align-items: center;
+    justify-content: flex-end;
+    width: 80%;
+}
+
+/* Media Queries */
+
+@media (max-width: 768px) {
+  /* Adjust the breakpoint as needed */
+  .nav-button-container {
+    display: none;
+  }
+
+  .title {
+    font-size: 24px;
+    text-align: center;
+  }
+  .full-page-menu-show {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
+  .hamburger-menu{
+    display: flex;
+  }
 }

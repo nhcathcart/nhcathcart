@@ -1,21 +1,12 @@
 import { useState } from "react";
 import { CarouselItem } from "./CarouselItem";
 import "../css/Carousel.css";
-export function Carousel() {
+export function Carousel(props: {images: string[]}) {
   const [activeIndex, setActiveIndex] = useState(0);
-  const items = [
-    {
-      description: "This is the description",
-      image: "src/media/TESTIMAGE.png",
-    },
-    {
-      description: "This is the description",
-      image: "src/media/TESTIMAGE1.png",
-    },
-  ];
+  const { images } = props;
   function updateIndex(newIndex: number) {
     if (newIndex < 0) return;
-    if (newIndex >= items.length) return;
+    if (newIndex >= images.length) return;
     setActiveIndex(newIndex);
   }
   return (
@@ -24,9 +15,9 @@ export function Carousel() {
         className="carousel-inner"
         style={{ transform: `translate(-${activeIndex * 100}%)` }}
       >
-        {items.map((item) => {
+        {images.map((image) => {
           return (
-            <CarouselItem description={item.description} image={item.image} />
+            <CarouselItem image={image} />
           );
         })}
       </div>

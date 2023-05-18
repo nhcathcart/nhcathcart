@@ -1,0 +1,39 @@
+.ex-modal-button{
+    background-color: #59536f;
+    border-radius: 5px;
+    padding: 1%;
+}
+.ex-modal-button:hover{
+    background-color: #645d7d;
+}
+.ex-modal-button:active{
+    transform: scale(.95);
+}
+.ex-modal-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #7695b740;
+  backdrop-filter: blur(4px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 3;
+}
+
+.ex-modal-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow-y: scroll;
+  height: 80%;
+  width: 80%;
+  padding: 0.5%;
+  border-radius: 10px;
+  background-color: #59536f;
+  box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.5);
+  z-index: 4;
+}

@@ -1,0 +1,26 @@
+# Use the official Node.js
+FROM node:latest
+
+# Set the working directory inside the container
+WORKDIR /app
+
+# Copy package.json and package-lock.json (or yarn.lock) to the working directory
+COPY package*.json ./
+
+# Install dependencies
+RUN npm install
+
+# Copy the entire project to the working directory
+COPY . .
+
+# Build the project
+RUN npm run build
+
+# Install the `serve` package
+RUN npm install -g serve
+
+# Expose the desired port
+EXPOSE 5000
+
+# Start the app
+CMD ["npx", "serve", "-s", "dist"]

@@ -1,29 +1,47 @@
-import { Fragment } from "react";
+import { ProjectPreview } from "./ProjectPreview";
 import "../css/utility-classes.css";
 import "../css/Projects.css";
-export function ProjectDesc(props: {title: string, text: string, isOdd: boolean}) {
-  const { title, text, isOdd } = props;
-  if (isOdd){
+export function Project(props: {
+  title: string;
+  text: string;
+  isOdd: boolean;
+  thumbnail: string;
+  link: string;
+  images: string[];
+}) {
+  const { title, text, isOdd, thumbnail, link, images } = props;
+  if (isOdd) {
     return (
-        <Fragment>
-          <div className="project-text-container">
-              <h4 className="project-title">{title}</h4>
-              <div className="project-text">
-                { text }
-              </div>
-            </div>
-        </Fragment>
-      );
+      <div className="project-container text">
+        <div className="project-text-container">
+          <div className="project-text-inner">
+            <h4 className="project-title">{title}</h4>
+            <div className="project-text">{text}</div>
+          </div>
+        </div>
+        <ProjectPreview
+          isOdd={true}
+          thumbnail={thumbnail}
+          link={link}
+          images={images}
+        />
+      </div>
+    );
   }
   return (
-    <Fragment>
-          <div className="project-text-container">
-              <h4 className="project-title">{title}</h4>
-              <div className="project-text">
-                { text }
-              </div>
-            </div>
-        </Fragment>
-  )
-  
+    <div className="project-container text">
+      <ProjectPreview
+        isOdd={false}
+        thumbnail={thumbnail}
+        link={link}
+        images={images}
+      />
+      <div className="project-text-container">
+        <div className="project-text-inner">
+          <h4 className="project-title">{title}</h4>
+          <div className="project-text">{text}</div>
+        </div>
+      </div>
+    </div>
+  );
 }
