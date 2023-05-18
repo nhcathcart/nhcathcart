@@ -28,8 +28,8 @@ resource "aws_default_subnet" "default_subnet" {
   }
 }
 #Create Security Groups/Rules
-resource "aws_security_group" "mancala-instance-rules" {
-  name        = "allow_inbound_outbound_mancala"
+resource "aws_security_group" "nhcathcart-instance-rules" {
+  name        = "allow_inbound_outbound_nhcathcart"
   description = "Allow inbound and outbound traffic"
   vpc_id      = aws_default_vpc.default.id
 
@@ -50,32 +50,32 @@ resource "aws_security_group" "mancala-instance-rules" {
   }
 
   tags = {
-    Name = "allow_traffic_mancala"
+    Name = "allow_traffic_nhcathcart"
   }
 }
 
 #Create EC2 instances
 
-resource "aws_instance" "mancala-instance" {
+resource "aws_instance" "nhcathcart-instance" {
   ami           = "ami-0cff7528ff583bf9a" # us-east-1
   instance_type = "t2.micro"
   availability_zone = "us-east-1a"
-  security_groups = [aws_security_group.mancala-instance-rules.name]
+  security_groups = [aws_security_group.nhcathcart-instance-rules.name]
   user_data = <<-EOF
             #!/bin/bash
             sudo yum update -y
             sudo amazon-linux-extras install docker -y
             sudo service docker start
             sudo usermod -a -G docker ec2-user
-            docker run -d --name nhcathcart  -p 80:3000 -p 443:3000 nhcathcart/mancala:latest
+            docker run -d --name nhcathcart  -p 80:3000 -p 443:3000 nhcathcart/nhcathcart:lastest
             EOF
 
 tags = {
-  Name = "mancala-instance"
+  Name = "nhcathcart-instance"
 }
 }
 
-output "mancala-instace-ip" {
-  description = "public ip of the mancala instance"
-  value       = aws_instance.mancala-instance.public_ip
+output "nhcathcart-instace-ip" {
+  description = "public ip of the nhcathcart instance"
+  value       = aws_instance.nhcathcart-instance.public_ip
 }
