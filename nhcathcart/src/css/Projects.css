@@ -8,6 +8,23 @@
   width: 100%;
   margin-top: 100px;
 }
+.project-container-mobile {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  flex-shrink: 0;
+  width: 100%;
+  margin-top: 50px;
+  animation: moveContainerRight 1s ease-in-out;
+}
+
+.project-text-container-mobile{
+  width: 100%;
+  padding: 2%;
+  justify-content: center;
+}
+
 .project-contaier > * {
     z-index: 0;
 }
@@ -41,11 +58,13 @@
 .project-preview-container-right {
   display: flex;
   justify-content: center;
+  align-items: center;
   width: 50%;
 }
 .project-preview-container-left {
   display: flex;
   justify-content: center;
+  align-items: center;
   width: 50%;
 }
 .project-preview {
@@ -56,9 +75,30 @@
   justify-content: center;
   padding: 2%;
   width: 80%;
+  height: fit-content;
   border-radius: 10px;
   z-index: 0;
   animation: moveContainerRight 1s ease-in-out;
+}
+.project-preview-full{
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2%;
+  width: 100%;
+  height: fit-content;
+  border-radius: 10px;
+  z-index: 0;
+  animation: moveContainerRight 1s ease-in-out;
+}
+.project-preview-container-full{
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
 }
 .thumbnail {
   width: 100%;
@@ -98,7 +138,12 @@
 /* Media Queries */
 
 @media (max-width: 768px) {
-  /* Adjust the breakpoint as needed */
+  .project-container{
+    display: none;
+  }
+  .project-container-mobile{
+    display: flex;
+  }
 }
 
 @keyframes moveContainerLeft {

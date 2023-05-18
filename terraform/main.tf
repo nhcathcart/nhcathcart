@@ -67,7 +67,7 @@ resource "aws_instance" "nhcathcart-instance" {
             sudo amazon-linux-extras install docker -y
             sudo service docker start
             sudo usermod -a -G docker ec2-user
-            docker run -d --name nhcathcart  -p 80:3000 -p 443:3000 nhcathcart/nhcathcart:lastest
+            docker run -d --name nhcathcart  -p 80:3000 -p 443:3000 nhcathcart/nhcathcart:latest
             EOF
 
 tags = {

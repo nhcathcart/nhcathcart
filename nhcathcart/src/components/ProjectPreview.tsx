@@ -3,9 +3,49 @@ import { Modal } from "./Modal";
 import { Carousel } from "./Carousel";
 import "../css/utility-classes.css";
 import "../css/Projects.css";
-export function ProjectPreview(props: { isOdd: boolean; thumbnail: string; link: string; images: string[]}) {
+export function ProjectPreview(props: {
+  isMobile: boolean;
+  isOdd: boolean;
+  thumbnail: string;
+  link: string;
+  images: string[];
+}) {
   const [showModal, setShowModal] = useState(false);
-  const { isOdd, thumbnail, link, images } = props;
+  const { isMobile, isOdd, thumbnail, link, images } = props;
+  if (isMobile)
+    return (
+      <Fragment>
+        <div className="project-preview-container-full">
+          <div className="project-preview-full accent-test">
+            <img className="thumbnail" src={thumbnail} />
+            <div className="preview-buttons">
+              <button
+                className="preview-button"
+                onClick={() => setShowModal(true)}
+              >
+                Preview
+              </button>
+              <button
+                className="preview-button"
+                onClick={() => window.open(`${link}`, "_blank")}
+              >
+                See the code
+              </button>
+            </div>
+          </div>
+        </div>
+        <Modal
+          isVisible={showModal}
+          onClose={() => {
+            setShowModal(false);
+          }}
+        >
+          <div className="modal-preview">
+            <Carousel images={images} />
+          </div>
+        </Modal>
+      </Fragment>
+    );
   return (
     <Fragment>
       <div
@@ -18,8 +58,18 @@ export function ProjectPreview(props: { isOdd: boolean; thumbnail: string; link:
         <div className="project-preview accent-test">
           <img className="thumbnail" src={thumbnail} />
           <div className="preview-buttons">
-            <button className="preview-button" onClick={() => setShowModal(true)}>Preview</button>
-            <button className="preview-button" onClick={()=>window.open(`${link}`, '_blank')}>See the code</button>
+            <button
+              className="preview-button"
+              onClick={() => setShowModal(true)}
+            >
+              Preview
+            </button>
+            <button
+              className="preview-button"
+              onClick={() => window.open(`${link}`, "_blank")}
+            >
+              See the code
+            </button>
           </div>
         </div>
       </div>
@@ -30,7 +80,7 @@ export function ProjectPreview(props: { isOdd: boolean; thumbnail: string; link:
         }}
       >
         <div className="modal-preview">
-          <Carousel images={images}/>
+          <Carousel images={images} />
         </div>
       </Modal>
     </Fragment>

@@ -1,5 +1,5 @@
 import { useAppSelector, useAppDispatch } from "./hooks";
-import { NavBar } from "./components/Navbar";
+import { NavBar } from "./components/NavBar";
 import { About } from "./components/About";
 import { ProjectList } from "./components/ProjectList"
 import { Snippets } from "./components/Snippets"

@@ -1,38 +1,53 @@
-.carousel{
-    overflow: hidden;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+.carousel {
+  position: relative;
+  display: flex;
+  overflow: hidden;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
-.carousel-inner{
-    white-space: nowrap;
-    transition: transform 0.3s;
-    width: 100%;
+.carousel-inner {
+  white-space: nowrap;
+  transition: transform 0.3s;
+  width: 100%;
 }
-.carousel-item{
-    display: inline-flex;
-    width: 100%;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+.carousel-item {
+  display: inline-flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
-.carousel-image{
-    max-height: 600px;
-    border-radius: 10px;
+.carousel-image {
+  max-height: 700px;
+  border-radius: 10px;
 }
-.carousel-buttons{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.carousel-buttons {
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  width: 100%;
+  justify-content: center;
+  align-items: flex-end;
+  padding: 2%;
 }
-.carousel-button{
-    border-radius: 3px;
+.carousel-button {
+  opacity: .4;
+  box-shadow: 0px 0px 5px #fff;
+  border-radius: 50%;
+  background-color: #e4dbd8;
 }
-.carousel-button:hover{
-    background-color: #4d485f;
+
+.carousel-button:hover {
+  opacity: .85;
 }
-.carousel-button:active{
-    transform: scale(.90);
+
+.carousel-button-left:active {
+  transform: scale(0.9);
+}
+.carousel-button-right:active {
+  transform: scale(0.9);
 }

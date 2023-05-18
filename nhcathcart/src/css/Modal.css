@@ -17,11 +17,13 @@
   display: flex;
   flex-direction: column;
   overflow-y: scroll;
-  height: 80%;
   width: 80%;
-  padding: 2%;
+  padding: 1%;
   border-radius: 10px;
   background-color: #59536F;
   box-shadow: 0 0 15px 0 rgba(0, 0, 0, .5);
   z-index: 2;
+}
+.modal-content:-webkit-scrollbar {
+  display: none;
 }

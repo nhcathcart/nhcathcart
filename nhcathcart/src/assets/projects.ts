@@ -19,6 +19,6 @@ export const projects = [
     text: "A chess analysis tool. Give it your Lichess username, and it will give you positions from your games to study and your record based on openings. Written with Flask.",
     link: "https://github.com/nhcathcart/chessAssist",
     thumbnail: "/media/chess-image-3.jpeg",
-    images: ["/media/chess-image-1.jpeg", "/media/chess-image-2.jpeg", "/media/chess-image-3.jpeg", "src/assets/media/chess-image-4.jpeg", "/media/chess-image-5.jpeg"]
+    images: ["/media/chess-image-1.jpeg", "/media/chess-image-2.jpeg", "/media/chess-image-3.jpeg", "/media/chess-image-4.jpeg", "/media/chess-image-5.jpeg"]
   }
 ];
