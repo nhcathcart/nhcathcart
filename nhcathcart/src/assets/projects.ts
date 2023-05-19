@@ -3,9 +3,9 @@ export const projects = [
     title: "Splache",
     text:
       "A server side GraphQL cacheing solution built with node and REDIS. Check it out on Github and NPM.",
-    thumbnail: "/media/SplacheThumbnail.png",
+    thumbnail: "https://nhcathcart-images.s3.amazonaws.com/SplacheThumbnail.png",
     link: "https://github.com/oslabs-beta/Splache",
-    images: ["/media/SplacheThumbnail.png"],
+    images: ["https://nhcathcart-images.s3.amazonaws.com/SplacheThumbnail.png"],
   },
   {
     title: "storybook",

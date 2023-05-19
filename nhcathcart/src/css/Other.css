@@ -1,19 +1,30 @@
-.other-container{
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    padding: 5%;
-    margin-top: 3%;
-    border: solid #39537b;
-    border-radius: 10px; 
+.other-container-parent {
 }
-.other-container > *{
-    margin-top: 2%;
+.other-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 5%;
+  margin-top: 3%;
+  border: solid #39537b;
+  border-radius: 10px;
+  animation: fadeIn 1s ease-in forwards;
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
   }
-.other-title{
-    font-size: 30px;
-    font-weight: bold;
+  100% {
+    opacity: 1;
+  }
+}
+.other-container > * {
+  margin-top: 2%;
+}
+.other-title {
+  font-size: 30px;
+  font-weight: bold;
 }
 .other-container:-webkit-scrollbar {
-    display: none;
-  }
+  display: none;
+}

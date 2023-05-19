@@ -1,3 +1,4 @@
+import { LoaderScreen } from "./LoaderScreen";
 import { Project } from "./Project";
 import { projects } from "../assets/projects"
 import "../css/utility-classes.css";
@@ -8,6 +9,7 @@ export function ProjectList() {
   })
   return (
     <>
+      <LoaderScreen/>
       {projectArr}
     </>
   );

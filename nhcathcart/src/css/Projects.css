@@ -7,6 +7,15 @@
   flex-shrink: 0;
   width: 100%;
   margin-top: 100px;
+  animation: fadeIn 1s ease-in forwards;
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 .project-container-mobile {
   display: none;
