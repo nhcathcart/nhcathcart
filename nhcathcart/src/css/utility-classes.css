@@ -1,6 +1,9 @@
 .primary{
     background-color: #253247;
 }
+.primary-darker{
+    background-color: #1c2a3f;
+}
 .secondary{
     background-color: #7695B7;
 }
