@@ -4,6 +4,8 @@ import { ReactSnippet } from "./ReactSnippet";
 import { useState } from "react";
 import "../css/Snippets.css";
 import "../css/utility-classes.css";
+import { DockerSnippet } from "./DockerSnippet";
+import { dockerPlain } from "../assets/docker-plain-text";
 
 export function Snippets() {
   const [viewState, setViewState] = useState({
@@ -32,6 +34,16 @@ export function Snippets() {
         example={component.example}
         JSX={component.JSX}
         CSS={component.CSS}
+      />
+    );
+  });
+
+  const dockerSnippetArray = dockerPlain.map((item) => {
+    return (
+      <DockerSnippet
+        title={item.title}
+        description={item.description}
+        code={item.code}
       />
     );
   });
@@ -64,7 +76,7 @@ export function Snippets() {
           {viewState.react? reactSnippetTitle: null}
         </h1>
         {viewState.react? reactSnippetArray: null}
-        {viewState.docker? "THIS IS FOR DOCKER": null}
+        {viewState.docker? dockerSnippetArray: null}
         {viewState.terraform? "THIS IS FOR TERRAFORM": null}
       </div>
     </div>

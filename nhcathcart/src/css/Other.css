@@ -1,4 +1,8 @@
 .other-container-parent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 80%;
 }
 .other-container {
   display: flex;
@@ -17,6 +21,17 @@
   100% {
     opacity: 1;
   }
+}
+.other-carousel-frame{
+  align-self: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  height: 80%;
+  opacity: .85;
+  border-radius: 10px;
+  padding: 1%;
 }
 .other-container > * {
   margin-top: 2%;

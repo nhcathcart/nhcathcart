@@ -33,6 +33,7 @@
   100% {
     opacity: 0;
     display: none;
+    z-index: 0;
   }
 }
 

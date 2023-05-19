@@ -16,7 +16,9 @@ export function OtherStuff() {
       <LoaderScreen />
       <div className="other-container text">
         <h2 className="other-title">Pasta</h2>
-        <Carousel images={pastaImages} align-self="center" />
+        <div className="other-carousel-frame accent-test">
+          <Carousel images={pastaImages} align-self="center" />
+        </div>
       </div>
       <div className="other-container text">
         <h2 className="other-title text">Playlists</h2>

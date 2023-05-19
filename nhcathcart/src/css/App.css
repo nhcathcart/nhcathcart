@@ -12,6 +12,7 @@
     height: 90%;
     overflow-y: scroll;
     position: relative;
+    align-items: center;
 }
 
 .content:-webkit-scrollbar {
