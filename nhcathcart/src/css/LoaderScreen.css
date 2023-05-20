@@ -25,9 +25,7 @@
   align-items: center;
   z-index: 9999;
 }
-.overlay-hidden{
-  
-}
+
 @keyframes fadeOut {
   0% {
     opacity: 0.9;
