@@ -28,7 +28,7 @@ export function LoaderScreen() {
         className={
           showOverlay
             ? "overlay primary-darker"
-            : "overlay-hidden primary-darker"
+            : "overlay-hiding primary-darker"
         }
       >
         <Logo />
