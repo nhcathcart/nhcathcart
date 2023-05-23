@@ -30,8 +30,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 80%;
-  height: 80%;
+  width: fit-content;
+  height: fit-content;
   opacity: .85;
   border-radius: 10px;
   padding: 1%;

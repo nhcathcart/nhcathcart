@@ -6,6 +6,9 @@ import "../css/Snippets.css";
 import "../css/utility-classes.css";
 import { DockerSnippet } from "./DockerSnippet";
 import { dockerPlain } from "../assets/docker-plain-text";
+import { terraformPlain } from "../assets/terraform-plain-text";
+import { TerraformSnippet } from "./TerraformSnippet";
+import { LoaderScreen } from "./LoaderScreen";
 
 export function Snippets() {
   const [viewState, setViewState] = useState({
@@ -47,9 +50,21 @@ export function Snippets() {
       />
     );
   });
+
+  const terraformSnippetArray = terraformPlain.map((item) => {
+    return (
+      <TerraformSnippet
+      title={item.title}
+      description={item.description}
+      code={item.code}
+      />
+    )
+  })
   const reactSnippetTitle = "These are some components I've made that I find myself reusing."
 
   return (
+    <>
+    <LoaderScreen/>
     <div className="snippets-parent-container text">
       <div className="snippets-sidebar primary-darker text">
         <button
@@ -77,8 +92,9 @@ export function Snippets() {
         </h1>
         {viewState.react? reactSnippetArray: null}
         {viewState.docker? dockerSnippetArray: null}
-        {viewState.terraform? "THIS IS FOR TERRAFORM": null}
+        {viewState.terraform? terraformSnippetArray: null}
       </div>
     </div>
+    </>
   );
 }

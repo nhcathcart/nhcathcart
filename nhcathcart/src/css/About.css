@@ -91,5 +91,12 @@
   .about-container {
     width: 100%;
     overflow-y: scroll;
+    flex-direction: column;
+  }
+  .about-container-right{
+    display: none;
+  }
+  .about-container-left{
+    width: 100%;
   }
 }
