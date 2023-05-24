@@ -4,6 +4,7 @@ interface viewChoice {
   about: boolean;
   snippets: boolean;
   projects: boolean;
+  visualizations: boolean;
   other: boolean;
 }
 
@@ -12,12 +13,14 @@ const initialState: viewChoice = {
   snippets: false,
   projects: false,
   other: false,
+  visualizations: false,
 };
 const resetState: viewChoice = {
   about: false,
   snippets: false,
   projects: false,
   other: false,
+  visualizations: false,
 };
 
 export const viewChoice = createSlice({
@@ -44,10 +47,15 @@ export const viewChoice = createSlice({
       newState.other = true;
       return newState;
     },
+    chooseVisualizations: (state) => {
+      const newState = Object.assign({}, resetState);
+      newState.visualizations = true;
+      return newState;
+    },
   },
 });
 
-export const { chooseAbout, chooseSnippets, chooseProjects, chooseOther } =
+export const { chooseAbout, chooseSnippets, chooseProjects, chooseOther, chooseVisualizations } =
   viewChoice.actions;
 
 export default viewChoice.reducer;

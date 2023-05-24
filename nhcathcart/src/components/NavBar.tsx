@@ -4,6 +4,7 @@ import {
   chooseSnippets,
   chooseProjects,
   chooseOther,
+  chooseVisualizations,
 } from "../reducers/viewReducer";
 import "../css/Navbar.css";
 import "../css/utility-classes.css";
@@ -103,6 +104,14 @@ export function NavBar() {
           }}
         >
           snippets
+        </button>
+        <button
+          className="nav-button"
+          onClick={() => {
+            dispatch(chooseVisualizations());
+          }}
+        >
+          visualizations
         </button>
         <button
           className="nav-button"

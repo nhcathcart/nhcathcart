@@ -1,0 +1,97 @@
+<svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="44"
+      height="44"
+      fill="none"
+      viewBox="0 0 44 44"
+      style={{ maxWidth: "100%", maxHeight: "100%" }}
+      className = "paused"
+    >
+      <g
+        stroke="#E4DBD8"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2.75"
+        clipPath="url(#clip0_1_2)"
+      >
+        <path
+          strokeDasharray="0,0,0,111.0384521484375"
+          d="M7.333 11A3.667 3.667 0 0111 7.333h22A3.666 3.666 0 0136.667 11v22A3.666 3.666 0 0133 36.667H11A3.666 3.666 0 017.333 33V11z"
+        >
+          <animate
+            fill="freeze"
+            attributeName="stroke-dasharray"
+            attributeType="XML"
+            dur="0.6097560975609756s"
+            keyTimes="0; 0.5; 1"
+            repeatCount="1"
+            values="0,0,0,111.0384521484375; 0,55.51922607421875,55.51922607421875,0; 111.0384521484375,0,0,0"
+          ></animate>
+        </path>
+        <path strokeDasharray="0,0,0,9.16659927368164" d="M14.667 20.167v9.166">
+          <animate
+            fill="freeze"
+            attributeName="stroke-dasharray"
+            attributeType="XML"
+            dur="0.6097560975609756s"
+            keyTimes="0; 0.5; 1"
+            repeatCount="1"
+            values="0,0,0,9.16659927368164; 0,4.58329963684082,4.58329963684082,0; 9.16659927368164,0,0,0"
+          ></animate>
+        </path>
+        <path
+          strokeDasharray="0,0,0,0.01830005645751953"
+          d="M14.667 14.667v.018"
+        >
+          <animate
+            fill="freeze"
+            attributeName="stroke-dasharray"
+            attributeType="XML"
+            dur="0.6097560975609756s"
+            keyTimes="0; 0.5; 1"
+            repeatCount="1"
+            values="0,0,0,0.01830005645751953; 0,0.009150028228759766,0.009150028228759766,0; 0.01830005645751953,0,0,0"
+          ></animate>
+        </path>
+        <path strokeDasharray="0,0,0,9.16659927368164" d="M22 29.333v-9.166">
+          <animate
+            fill="freeze"
+            attributeName="stroke-dasharray"
+            attributeType="XML"
+            dur="0.6097560975609756s"
+            keyTimes="0; 0.5; 1"
+            repeatCount="1"
+            values="0,0,0,9.16659927368164; 0,4.58329963684082,4.58329963684082,0; 9.16659927368164,0,0,0"
+          ></animate>
+        </path>
+        <path
+          strokeDasharray="0,0,0,17.01912498474121"
+          d="M29.333 29.333v-5.5a3.667 3.667 0 00-7.333 0"
+        >
+          <animate
+            fill="freeze"
+            attributeName="stroke-dasharray"
+            attributeType="XML"
+            dur="0.6097560975609756s"
+            keyTimes="0; 0.5; 1"
+            repeatCount="1"
+            values="0,0,0,17.01912498474121; 0,8.509562492370605,8.509562492370605,0; 17.01912498474121,0,0,0"
+          ></animate>
+        </path>
+      </g>
+      <defs>
+        <clipPath id="clip0_1_2">
+          <path fill="#fff" strokeDasharray="0,0,0,176" d="M0 0H44V44H0z">
+            <animate
+              fill="freeze"
+              attributeName="stroke-dasharray"
+              attributeType="XML"
+              dur="0.6097560975609756s"
+              keyTimes="0; 0.5; 1"
+              repeatCount="1"
+              values="0,0,0,176; 0,88,88,0; 176,0,0,0"
+            ></animate>
+          </path>
+        </clipPath>
+      </defs>
+    </svg>
