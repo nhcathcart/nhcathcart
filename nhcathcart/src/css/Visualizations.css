@@ -1,0 +1,33 @@
+.vis-page-container{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 80%;
+    padding-left: 5%;
+}
+.vis-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2%;
+    width: 50%;
+}
+.vis-title-container{
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 5%;
+    width: 80%;
+    font-size: 20;
+}
+
+@media (max-width: 768px) {
+    .vis-page-container{
+        width: 100%
+    }
+    .vis-container{
+        width: 100%;
+    }
+    .vis-title-container{
+        width: 100%;
+    }
+  }

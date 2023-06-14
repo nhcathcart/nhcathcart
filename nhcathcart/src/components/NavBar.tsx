@@ -5,6 +5,7 @@ import {
   chooseProjects,
   chooseOther,
   chooseVisualizations,
+  chooseContact,
 } from "../reducers/viewReducer";
 import "../css/Navbar.css";
 import "../css/utility-classes.css";
@@ -52,7 +53,7 @@ export function NavBar() {
             toggleFullPageMenu();
           }}
         >
-          about
+          home
         </button>
         <button
           className="nav-button-full"
@@ -75,10 +76,28 @@ export function NavBar() {
         <button
           className="nav-button-full"
           onClick={() => {
+            dispatch(chooseVisualizations());
+            toggleFullPageMenu();
+          }}
+        >
+          visualizations
+        </button>
+        <button
+          className="nav-button-full"
+          onClick={() => {
             dispatch(chooseOther());
             toggleFullPageMenu();
           }}
         >other stuff</button>
+        <button
+          className="nav-button-full"
+          onClick={() => {
+            dispatch(chooseContact());
+            toggleFullPageMenu();
+          }}
+        >
+          contact
+        </button>
       </div>
       <div className="nav-button-container">
         <button
@@ -87,7 +106,7 @@ export function NavBar() {
             dispatch(chooseAbout());
           }}
         >
-          about
+          home
         </button>
         <button
           className="nav-button"
@@ -120,6 +139,14 @@ export function NavBar() {
           }}
         >
           other stuff
+        </button>
+        <button
+          className="nav-button"
+          onClick={() => {
+            dispatch(chooseContact());
+          }}
+        >
+          contact
         </button>
       </div>
     </nav>
