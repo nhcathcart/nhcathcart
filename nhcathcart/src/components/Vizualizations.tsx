@@ -8,6 +8,7 @@ import "../css/Snippets.css";
 import "../css/utility-classes.css";
 import { LoaderScreen } from "./LoaderScreen";
 export function Vizualizations() {
+
   const vizualizationArray = vizArray.map((viz) => {
     return (
       <Viz
@@ -17,20 +18,38 @@ export function Vizualizations() {
       />
     );
   });
-
+  const vizButtonArray = vizArray.map((viz)=>{
+    return (
+      <button
+          className="snippet-sidebar-button"
+          onClick={()=>scrollToElement(viz.title)}
+        >
+          {viz.title}
+        </button>
+    )
+  })
+  function scrollToElement(elementId: string) {
+    const element = document.getElementById(elementId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
   return (
     <>
-      <LoaderScreen />
-
-      <div className="vis-page-container text">
-        <div className="vis-title-container text">
-          <p className="snippets-title">
-            This is a bit of a work in progress. The goal is to make a library
+    <LoaderScreen/>
+    <div className="snippets-parent-container text">
+      <div className="snippets-sidebar primary-darker text">
+        {vizButtonArray}
+      </div>
+      <div className="snippets-content-container">
+        <h1 className="snippet-title-super">Visualizations</h1>
+        <h2 className="snippets-title">
+        This is a bit of a work in progress. The goal is to make a library
             of data visualizations. I'm using visx for the D3 wrapper and framer
             motion for the animations.
-          </p>
-        </div>
+        </h2>
         {vizualizationArray}
+      </div>
       </div>
     </>
   );

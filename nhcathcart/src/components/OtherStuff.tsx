@@ -15,12 +15,6 @@ export function OtherStuff() {
     <div className="other-container-parent">
       <LoaderScreen />
       <div className="other-container text">
-        <h2 className="other-title">Pasta</h2>
-        <div className="other-carousel-frame accent-test">
-          <Carousel images={pastaImages} align-self="center" />
-        </div>
-      </div>
-      <div className="other-container text">
         <h2 className="other-title text">Playlists</h2>
         <iframe
           src="https://open.spotify.com/embed/playlist/7fe24pHseJUwlnAb54I4qK"
@@ -40,6 +34,12 @@ export function OtherStuff() {
           height="380"
           allow="encrypted-media"
         ></iframe>
+      </div>
+      <div className="other-container text">
+        <h2 className="other-title">Pasta</h2>
+        <div className="other-carousel-frame accent-test">
+          <Carousel images={pastaImages} align-self="center" />
+        </div>
       </div>
     </div>
   );

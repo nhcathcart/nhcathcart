@@ -4,6 +4,7 @@
     align-items: flex-start;
     width: 80%;
     padding-left: 5%;
+    animation: fadeIn 1s ease-in forwards;
 }
 .vis-container{
     display: flex;
@@ -29,5 +30,14 @@
     }
     .vis-title-container{
         width: 100%;
+    }
+  }
+
+  @keyframes fadeIn {
+    0% {
+      opacity: .1;
+    }
+    100% {
+      opacity: 1;
     }
   }
