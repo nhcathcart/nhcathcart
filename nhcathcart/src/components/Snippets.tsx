@@ -29,7 +29,7 @@ export function Snippets() {
     setViewState(newViewState);
   }
 
-  const reactSnippetArray = components.map((component) => {
+  const reactSnippetArray = components.map((component, index) => {
     return (
       <ReactSnippet
         title={component.title}
@@ -37,26 +37,29 @@ export function Snippets() {
         example={component.example}
         JSX={component.JSX}
         CSS={component.CSS}
+        key={`react-snippet-${index}`}
       />
     );
   });
 
-  const dockerSnippetArray = dockerPlain.map((item) => {
+  const dockerSnippetArray = dockerPlain.map((item, index) => {
     return (
       <DockerSnippet
         title={item.title}
         description={item.description}
         code={item.code}
+        key={`docker-snippet-${index}`}
       />
     );
   });
 
-  const terraformSnippetArray = terraformPlain.map((item) => {
+  const terraformSnippetArray = terraformPlain.map((item, index) => {
     return (
       <TerraformSnippet
       title={item.title}
       description={item.description}
       code={item.code}
+      key={`terraform-snippet-${index}`}
       />
     )
   })

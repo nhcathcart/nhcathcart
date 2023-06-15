@@ -15,9 +15,9 @@ export function Carousel(props: {images: string[]}) {
         className="carousel-inner"
         style={{ transform: `translate(-${activeIndex * 100}%)` }}
       >
-        {images.map((image) => {
+        {images.map((image, index) => {
           return (
-            <CarouselItem image={image} />
+            <CarouselItem image={image} key={`carousel-item-${index}`}/>
           );
         })}
       </div>

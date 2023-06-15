@@ -9,20 +9,22 @@ import "../css/utility-classes.css";
 import { LoaderScreen } from "./LoaderScreen";
 export function Vizualizations() {
 
-  const vizualizationArray = vizArray.map((viz) => {
+  const vizualizationArray = vizArray.map((viz, index) => {
     return (
       <Viz
         title={viz.title}
         vizualization={viz.vizualizaiton}
         code={viz.code}
+        key={`viz-${index}`}
       />
     );
   });
-  const vizButtonArray = vizArray.map((viz)=>{
+  const vizButtonArray = vizArray.map((viz, index)=>{
     return (
       <button
           className="snippet-sidebar-button"
           onClick={()=>scrollToElement(viz.title)}
+          key={`vizButton-${index}`}
         >
           {viz.title}
         </button>
