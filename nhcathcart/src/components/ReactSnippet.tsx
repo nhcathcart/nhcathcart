@@ -36,7 +36,7 @@ export function ReactSnippet(props: {
     content = <CodeBlock language={"css"}>{CSS}</CodeBlock>;
   return (
     <div className="snippet-container text">
-      <h1 className="snippet-title">{title}</h1>
+      <h1 className="snippet-title" id={title}>{title}</h1>
       <div className="snippet-description">
         <p>{description}</p>
       </div>

@@ -40,6 +40,9 @@
   border-radius: 50%;
   background-color: #e4dbd8;
 }
+.carousel-button-disabled {
+  opacity: 0;
+}
 
 .carousel-button:hover {
   opacity: .85;

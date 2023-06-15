@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { CarouselItem } from "./CarouselItem";
 import "../css/Carousel.css";
-export function Carousel(props: {images: string[]}) {
+export function Carousel(props: { images: string[] }) {
   const [activeIndex, setActiveIndex] = useState(0);
   const { images } = props;
   function updateIndex(newIndex: number) {
@@ -16,15 +16,26 @@ export function Carousel(props: {images: string[]}) {
         style={{ transform: `translate(-${activeIndex * 100}%)` }}
       >
         {images.map((image, index) => {
-          return (
-            <CarouselItem image={image} key={`carousel-item-${index}`}/>
-          );
+          return <CarouselItem image={image} key={`carousel-item-${index}`} />;
         })}
       </div>
       <div className="carousel-buttons">
-        <button className="carousel-button" onClick={() => updateIndex(activeIndex - 1)}>
-        <svg xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 96 960 960" width="48"><path d="M480 855.5 200.5 576 480 295.5l16.5 16-254 253h518v22h-518l254 253-16.5 16Z"/></svg>
-        
+        <button
+          className={
+            activeIndex === 0 ? "carousel-button-disabled" : "carousel-button"
+          }
+          onClick={() => updateIndex(activeIndex - 1)}
+          disabled={activeIndex === 0}
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            height="48"
+            viewBox="0 96 960 960"
+            width="48"
+          >
+            <path d="M480 855.5 200.5 576 480 295.5l16.5 16-254 253h518v22h-518l254 253-16.5 16Z" />
+          </svg>
+
           {/* <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -39,8 +50,18 @@ export function Carousel(props: {images: string[]}) {
             />
           </svg> */}
         </button>
-        <button className="carousel-button" onClick={() => updateIndex(activeIndex + 1)}>
-        <svg xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 96 960 960" width="48"><path d="m480 855.5-14.5-16 252-253h-517v-22h517l-252-253 14.5-16L760.5 576 480 855.5Z"/></svg>
+        <button
+          className={activeIndex>=images.length-1? "carousel-button-disabled" : "carousel-button"}
+          onClick={() => updateIndex(activeIndex + 1)}
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            height="48"
+            viewBox="0 96 960 960"
+            width="48"
+          >
+            <path d="m480 855.5-14.5-16 252-253h-517v-22h517l-252-253 14.5-16L760.5 576 480 855.5Z" />
+          </svg>
           {/* <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"

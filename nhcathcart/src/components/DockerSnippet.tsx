@@ -12,7 +12,7 @@ export function DockerSnippet(props: {
   const content = <CodeBlock language={"docker"}>{code}</CodeBlock>;
   return (
     <div className="snippet-container text">
-      <h1 className="snippet-title">{title}</h1>
+      <h1 className="snippet-title" id={title}>{title}</h1>
       <div className="snippet-description">
         <p>{description}</p>
       </div>

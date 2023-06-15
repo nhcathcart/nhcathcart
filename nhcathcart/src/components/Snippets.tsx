@@ -22,13 +22,19 @@ export function Snippets() {
     terraform: false,
     docker: false,
   };
-
+  
   function chooseView(choice: "react" | "terraform" | "docker") {
     const newViewState = Object.assign({}, resetState);
     newViewState[choice] = true;
     setViewState(newViewState);
   }
 
+  function scrollToElement(elementId: string) {
+    const element = document.getElementById(elementId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
   const reactSnippetArray = components.map((component, index) => {
     return (
       <ReactSnippet
@@ -42,6 +48,11 @@ export function Snippets() {
     );
   });
 
+  const reactButtonArray = components.map((component, index) => {
+    return (
+    <button className="sub-button" onClick={()=>{scrollToElement(component.title)}} key={`${component.title}`}>{component.title}</button>
+    )
+  })
   const dockerSnippetArray = dockerPlain.map((item, index) => {
     return (
       <DockerSnippet
@@ -52,7 +63,11 @@ export function Snippets() {
       />
     );
   });
-
+  const dockerButtonArray = dockerPlain.map((command, index) => {
+    return (
+    <button className="sub-button" onClick={()=>{scrollToElement(command.title)}} key={command.title}>{command.title}</button>
+    )
+  })
   const terraformSnippetArray = terraformPlain.map((item, index) => {
     return (
       <TerraformSnippet
@@ -61,6 +76,11 @@ export function Snippets() {
       code={item.code}
       key={`terraform-snippet-${index}`}
       />
+    )
+  })
+  const terraformButtonArray = terraformPlain.map((terra, index) => {
+    return (
+    <button className="sub-button" onClick={()=>{scrollToElement(terra.title)}} key={terra.title}>{terra.title}</button>
     )
   })
   const reactSnippetTitle = "These are some components I've made that I find myself reusing."
@@ -76,18 +96,27 @@ export function Snippets() {
         >
           React Components
         </button>
+        <div className={viewState.react===true? "sub-button-container": "none-container"}>
+          {reactButtonArray}
+        </div>
         <button
           className="snippet-sidebar-button"
           onClick={() => chooseView("terraform")}
         >
           Terraform Boilerplates
         </button>
+        <div className={viewState.terraform===true? "sub-button-container": "none-container"}>
+          {terraformButtonArray}
+        </div>
         <button
           className="snippet-sidebar-button"
           onClick={() => chooseView("docker")}
         >
           Docker Commands
         </button>
+        <div className={viewState.docker===true? "sub-button-container": "none-container"}>
+          {dockerButtonArray}
+        </div>
       </div>
       <div className="snippets-content-container">
         <h1 className="snippets-title">
